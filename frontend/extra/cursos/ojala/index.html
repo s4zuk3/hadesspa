@@ -5,7 +5,7 @@
     <title>Ojala Videos</title>
     
     <link rel='stylesheet prefetch' href='https://gitcdn.xyz/repo/angular/bower-material/v0.10.1-rc4/angular-material.css'>
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link rel="stylesheet" href="css/style.css">
 
     
@@ -17,9 +17,16 @@
 
     <div ng-app="MyApp" class="gridListdemoBasicUsage" ng-controller="AppCtrl as appCtrl">
 
-  <h1>Cursos de Ojala</h1>
+  <h1>Cursos de Ojala</h1> 
+<div style="padding:20px 0px 60px 0px">
+      <span class="col-md-1" style="font-weight:bold">Search</span>
+      <span class="col-md-3">
+      <input type="text" class="form-control" ng-model="searchKeyword"/>
+      </span>
+    </div>
+
   <div class='md-padding' layout="row" layout-wrap>
-        <md-card style="width: 300px;" ng-repeat="curso in cursos">
+        <md-card style="width: 300px;" ng-repeat="curso in cursos | filter: searchKeyword">
           <img src="http://oja.la{{curso.img}}" width="150" class="md-card-image" alt="user avatar">
           <md-card-content>
             <h2>{{curso.category}}</h2>
@@ -37,6 +44,9 @@
     </div>
   </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
     <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js'></script>
 <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
