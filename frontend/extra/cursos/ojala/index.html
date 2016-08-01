@@ -1,24 +1,24 @@
-<!doctype html>
-<html ng-app="ojalaApp2">
-<head>
-  <meta charset="utf-8">
-  <title>Ojala Videos</title>
-   <link rel="stylesheet" href="main.css">
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Ojala Videos</title>
+    
+    <link rel='stylesheet prefetch' href='https://gitcdn.xyz/repo/angular/bower-material/v0.10.1-rc4/angular-material.css'>
 
+        <link rel="stylesheet" href="css/style.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-  <script src="app.js"></script>
-</head>   
+    
+    
+    
+  </head>
+
   <body>
-    <h2>Videos Curso Ojala</h2>
-    <div ng-controller="AppCtrl" class="gridListdemoBasicUsage" ng-cloak>
-   
-    <div class='md-padding' layout="row" layout-wrap>
+
+    <div ng-app="MyApp" class="gridListdemoBasicUsage" ng-controller="AppCtrl as appCtrl">
+
+  <h1>Cursos de Ojala</h1>
+  <div class='md-padding' layout="row" layout-wrap>
         <md-card style="width: 300px;" ng-repeat="curso in cursos">
           <img src="http://oja.la{{curso.img}}" width="150" class="md-card-image" alt="user avatar">
           <md-card-content>
@@ -34,6 +34,21 @@
           </div>
         </md-card>
     </div>
+    </div>
+  </div>
 </div>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-route.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-aria.min.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-messages.min.js'></script>
+<script src='https://gitcdn.xyz/repo/angular/bower-material/v0.10.1-rc4/angular-material.js'></script>
+<script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/assets-cache.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
   </body>
 </html>
