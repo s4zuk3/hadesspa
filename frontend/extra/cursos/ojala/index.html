@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="ojalaApp">
+<head>
+  <meta charset="utf-8">
+  <title>Ojala Videos</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+  <script src="app.js"></script>
+</head>
+  <body>
+    <h2>Videos Curso Ojala</h2>
+    <div ng-controller="AppCtrl" class="gridListdemoBasicUsage" ng-cloak>
+   <div class='md-padding' layout="row" layout-wrap>
+      <md-card style="width: 300px;" ng-repeat="curso in cursos">
+        <img ng-src="http://placehold.it/150x150" class="md-card-image" alt="imagen curso">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{curso.category}}}</span>
+          </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+          <p>
+            Descripción: {{curso.title}}<br>
+            Level: {{curso.level }}<br>
+            Lecciones: {{curso.lessons}}<br>
+            Duración total: {{curso.duration}}
+          </p>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Settings">
+            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+          </md-button>
+          <md-button class="md-icon-button" aria-label="Share">
+            <md-icon md-svg-icon="img/icons/share-arrow.svg"></md-icon>
+          </md-button>
+        </md-card-actions>
+      </md-card>
+      
+   </div>
+</div>
+  </body>
+</html>
