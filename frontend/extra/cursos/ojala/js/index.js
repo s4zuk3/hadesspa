@@ -1,4 +1,4 @@
-angular.module('MyApp', ['ngMaterial'])
+angular.module('MyApp', ['ngMaterial','ngAnimate', 'ui.bootstrap'])
   .controller('AppCtrl', function($scope,$http) {
 
   $scope.cursos = {};
@@ -6,4 +6,5 @@ angular.module('MyApp', ['ngMaterial'])
     .then(function(response) {
         $scope.cursos = response.data;
     });
+
   });
