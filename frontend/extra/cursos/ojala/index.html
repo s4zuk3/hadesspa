@@ -41,8 +41,8 @@
        Ver videos <span class="caret"></span>
       </button>
       <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-        <div ng-repeat="chapter in curso.chapters"></div>
-        <li role="menuitem" ng-repeat="lesson in chapter.lessons"><a href="{{lesson.videos[0].url}}">{{lesson.order}} - {{lesson.title}}</a></li>
+        <div ng-repeat="chapter in curso.chapters">
+        <li role="menuitem" ng-repeat="lesson in chapter.lessons"><a href="{{lesson.videos[0].url}}">{{lesson.order}} - {{lesson.title}}</a></li></div>
       </ul>
     </div>
           </div>
