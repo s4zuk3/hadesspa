@@ -1,4 +1,39 @@
+<!doctype html>
 <html>
-<head></head>
-<body>TEST</body>
+	<head>
+    	<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    	<title>Hades App</title>
+    	
+    	<!-- Stylesheet -->
+    	<link href="import/css/bootstrap-3.7.7.min.css" rel="stylesheet">
+    	<link href="import/css/main.css" rel="stylesheet">
+
+
+    	<!-- Javascript -->
+	    <script type="text/javascript" src="import/js/jquery-3.1.0.min.js"></script>
+	    <script type="text/javascript" src="import/js/bootstrap-3.7.7.min.js"></script>	
+    	<script type="text/javascript" src="import/js/angular-1.5.8.min.js"></script>
+    	<script type="text/javascript" src="import/js/angular-route-1.5.8.min.js"></script>
+
+    	<!-- AngularJs -->
+    	<script type="text/javascript" src="app.js"></script>
+    	<script type="text/javascript" src="controller/index.js"></script>
+     	
+	</head>
+	
+	<body ng-app="hadesApp">
+
+		<!-- Header -->
+		<div></div>
+
+		<!-- Contenido (views/) -->
+		<div ng-view></div>
+		
+		<!-- Footer -->
+		<div></div>
+
+	</body>
+
 </html>
