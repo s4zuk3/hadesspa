@@ -15,7 +15,7 @@ public class Cotizacion implements Serializable {
 	private int idCotizacion;
 
 	@ManyToOne @JoinColumn(name="id_usuario", nullable=false)
-	private int id_usuario;
+	private Usuario id_usuario;
 
 	@Column(name="fecha", nullable=false)
 	private Date fecha;
@@ -31,11 +31,11 @@ public class Cotizacion implements Serializable {
 		this.idCotizacion = idCotizacion;
 	}
 
-	public int getId_usuario() {
+	public Usuario getId_usuario() {
 		return id_usuario;
 	}
 
-	public void setId_usuario(int id_usuario) {
+	public void setId_usuario(Usuario id_usuario) {
 		this.id_usuario = id_usuario;
 	}
 

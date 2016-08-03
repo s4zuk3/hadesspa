@@ -75,6 +75,7 @@ create table usuario
 (
    id_usuario           int not null,
    contrasena           varchar(30),
+   nombre               varchar(30),
    token                varchar(100),
    cargo                char(15),
    primary key (id_usuario),

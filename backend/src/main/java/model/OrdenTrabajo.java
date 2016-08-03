@@ -16,7 +16,7 @@ public class OrdenTrabajo implements Serializable {
 	private int idOrdenTrabajo;
 
 	@ManyToOne @JoinColumn(name="id_cotizacion", nullable=false)
-	private int idCotizacion;
+	private Cotizacion idCotizacion;
 
 	@Column(name="fecha_creacion_ot", nullable=false)
 	private Date fecha;
@@ -40,11 +40,11 @@ public class OrdenTrabajo implements Serializable {
 		this.idOrdenTrabajo = idOrdenTrabajo;
 	}
 
-	public int getIdCotizacion() {
+	public Cotizacion getIdCotizacion() {
 		return idCotizacion;
 	}
 
-	public void setIdCotizacion(int idCotizacion) {
+	public void setIdCotizacion(Cotizacion idCotizacion) {
 		this.idCotizacion = idCotizacion;
 	}
 

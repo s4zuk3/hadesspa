@@ -15,10 +15,10 @@ public class Factura implements Serializable {
 	private int idFactura;
 
 	@ManyToOne @JoinColumn(name="id_ot", nullable=false)
-	private int idOrdenTrabajo;
+	private OrdenTrabajo idOrdenTrabajo;
 
 	@ManyToOne @JoinColumn(name="id_cliente", nullable=false)
-	private int idCliente;
+	private Cliente idCliente;
 
 	@Column(name="fecha_emision", nullable=false)
 	private Date fecha;
@@ -40,19 +40,19 @@ public class Factura implements Serializable {
 		this.idFactura = idFactura;
 	}
 
-	public int getIdOrdenTrabajo() {
+	public OrdenTrabajo getIdOrdenTrabajo() {
 		return idOrdenTrabajo;
 	}
 
-	public void setIdOrdenTrabajo(int idOrdenTrabajo) {
+	public void setIdOrdenTrabajo(OrdenTrabajo idOrdenTrabajo) {
 		this.idOrdenTrabajo = idOrdenTrabajo;
 	}
 
-	public int getIdCliente() {
+	public Cliente getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
+	public void setIdCliente(Cliente idCliente) {
 		this.idCliente = idCliente;
 	}
 
