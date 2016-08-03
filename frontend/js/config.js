@@ -3,8 +3,8 @@ hadesApp.config(['$routeProvider', function($routeProvider) {
 	.when('/', {
 		templateUrl: 'views/home.html',
 		controller: 'HomeController'})
-	.when('/', {
-		templateUrl: 'views/FacturaFormController.html',
+	.when('/facturaform', {
+		templateUrl: 'views/FacturaForm.html',
 		controller: 'FacturaFormController'})
 	.otherwise({
 		redirectTo: '/'

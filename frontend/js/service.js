@@ -1,5 +1,5 @@
 // CRUD FACTURA
-hadesApp.service("Factura_service", function($http) {
+hadesApp.service("Facturas_service", function($http) {
     this.getAllFacturas = function() {
       return $http.get(URL_API+"/facturas").
         then(function(response) {
