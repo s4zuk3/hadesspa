@@ -5,5 +5,10 @@
 	<persistence-unit name="hadesAPI" transaction-type="JTA">
 		<jta-data-source>jdbc/pyme</jta-data-source>
 		<class>model.Usuario</class>
+		<class>model.Cliente</class>
+		<class>model.Cotizacion</class>
+		<class>model.Factura</class>
+		<class>model.OrdenCompra</class>
+		<class>model.OrdenTrabajo</class>
 	</persistence-unit>
 </persistence>

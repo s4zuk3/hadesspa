@@ -1,0 +1,84 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+import java.sql.Date;
+
+@Entity
+@Table(name="factura")
+@NamedQuery(name="Factura.findAll", query="SELECT a FROM Factura a")
+public class Factura implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@Column(name="id_factura", unique=true, nullable=false)
+	private int idFactura;
+
+	@ManyToOne @JoinColumn(name="id_ot", nullable=false)
+	private int idOrdenTrabajo;
+
+	@ManyToOne @JoinColumn(name="id_cliente", nullable=false)
+	private int idCliente;
+
+	@Column(name="fecha_emision", nullable=false)
+	private Date fecha;
+	
+	@Column(name="estado_factura", nullable=false)
+	private int estado;
+
+	@Column(name="monto_factura", nullable=false)
+	private int monto;
+	
+	public Factura() {
+	}
+
+	public int getIdFactura() {
+		return idFactura;
+	}
+
+	public void setIdFactura(int idFactura) {
+		this.idFactura = idFactura;
+	}
+
+	public int getIdOrdenTrabajo() {
+		return idOrdenTrabajo;
+	}
+
+	public void setIdOrdenTrabajo(int idOrdenTrabajo) {
+		this.idOrdenTrabajo = idOrdenTrabajo;
+	}
+
+	public int getIdCliente() {
+		return idCliente;
+	}
+
+	public void setIdCliente(int idCliente) {
+		this.idCliente = idCliente;
+	}
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public int getEstado() {
+		return estado;
+	}
+
+	public void setEstado(int estado) {
+		this.estado = estado;
+	}
+
+	public int getMonto() {
+		return monto;
+	}
+
+	public void setMonto(int monto) {
+		this.monto = monto;
+	}
+
+	
+}

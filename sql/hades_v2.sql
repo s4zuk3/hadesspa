@@ -1,10 +1,9 @@
 /*==============================================================*/
-/* table: clientes                                              */
+/* table: cliente                                              */
 /*==============================================================*/
-create table clientes
+create table cliente
 (
    id_cliente           int not null,
-   id_cotizacion        int,
    nombre_cliente       varchar(30),
    descripcion          varchar(400),
    primary key (id_cliente)
@@ -22,9 +21,9 @@ create table cotizacion
 );
 
 /*==============================================================*/
-/* table: facturas                                              */
+/* table: factura                                              */
 /*==============================================================*/
-create table facturas
+create table factura
 (
    id_factura           int not null,
    id_ot                int,
@@ -82,17 +81,15 @@ create table usuario
    key ak_id_usuario (id_usuario)
 );
 
-alter table clientes add constraint fk_posee foreign key (id_cotizacion)
-      references cotizacion (id_cotizacion) on delete restrict on update restrict;
 
 alter table cotizacion add constraint fk_crea foreign key (id_usuario)
       references usuario (id_usuario) on delete restrict on update restrict;
 
-alter table facturas add constraint fk_finalizada_mediante foreign key (id_ot)
+alter table factura add constraint fk_finalizada_mediante foreign key (id_ot)
       references ot (id_ot) on delete restrict on update restrict;
 
-alter table facturas add constraint fk_pagan foreign key (id_cliente)
-      references clientes (id_cliente) on delete restrict on update restrict;
+alter table factura add constraint fk_pagan foreign key (id_cliente)
+      references cliente (id_cliente) on delete restrict on update restrict;
 
 alter table oc_ot add constraint fk_necesita foreign key (id_ot)
       references ot (id_ot) on delete restrict on update restrict;
