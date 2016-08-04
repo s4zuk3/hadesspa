@@ -5,7 +5,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="usuario")
-@NamedQuery(name="Usuario.findAll", query="SELECT a FROM Usuario a")
 public class Usuario implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -36,9 +35,9 @@ public class Usuario implements Serializable {
 		this.idUsuario = idUsuario;
 	}
 
-	public String getContrasena() {
-		return contrasena;
-	}
+	//public String getContrasena() {
+	//	return contrasena;
+	//}
 
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
@@ -60,13 +59,22 @@ public class Usuario implements Serializable {
 		this.cargo = cargo;
 	}
 
-	public String getToken() {
-		return token;
-	}
+	//public String getToken() {
+	//	return token;
+	//}
 
 	public void setToken(String token) {
 		this.token = token;
 	}
+	@Override
+	public boolean equals(Object a){
+		return ((Usuario)a).idUsuario == this.idUsuario;
+	}
 
+	@Override
+    	public int hashCode() {
+    		return this.idUsuario;
+    	}
+	
 	
 }

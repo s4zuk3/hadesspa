@@ -6,7 +6,6 @@ import java.sql.Date;
 
 @Entity
 @Table(name="cotizacion")
-@NamedQuery(name="Cotizacion.findAll", query="SELECT a FROM Cotizacion a")
 public class Cotizacion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -47,5 +46,14 @@ public class Cotizacion implements Serializable {
 		this.fecha = fecha;
 	}
 	
+	@Override
+	public boolean equals(Object a){
+		return ((Cotizacion)a).idCotizacion == this.idCotizacion;
+	}
+
+	@Override
+    	public int hashCode() {
+    		return this.idCotizacion;
+    	}
 	
 }

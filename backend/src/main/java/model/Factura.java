@@ -6,7 +6,6 @@ import java.sql.Date;
 
 @Entity
 @Table(name="factura")
-@NamedQuery(name="Factura.findAll", query="SELECT a FROM Factura a")
 public class Factura implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -80,5 +79,14 @@ public class Factura implements Serializable {
 		this.monto = monto;
 	}
 
+	@Override
+	public boolean equals(Object a){
+		return ((Factura)a).idFactura == this.idFactura;
+	}
+
+	@Override
+    	public int hashCode() {
+    		return this.idFactura;
+    	}
 	
 }

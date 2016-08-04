@@ -1,8 +1,8 @@
 package facade;
 
 import java.util.List;
-
 import javax.ejb.Local;
+import javax.ws.rs.core.MultivaluedMap;
 
 import model.OrdenCompra;
 
@@ -18,7 +18,11 @@ public interface OrdenCompraFacade {
 	public OrdenCompra find(Object id);
 
 	public List<OrdenCompra> findAll();
+	
+	public List<OrdenCompra> findAll(MultivaluedMap<String,String> queryParams);
 
+	public OrdenCompra encontrarMasReciente();
+	
 	public List<OrdenCompra> findRange(int[] range);
 
 	public int count();

@@ -7,7 +7,6 @@ import java.util.List;
 
 @Entity
 @Table(name="oc")
-@NamedQuery(name="OrdenCompra.findAll", query="SELECT a FROM OrdenCompra a")
 public class OrdenCompra implements Serializable {
 	private static final long serialVersionUID = 1L;
 
@@ -24,7 +23,7 @@ public class OrdenCompra implements Serializable {
 	@Column(name="monto_oc", nullable=false)
 	private int monto;
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "listaOrdenCompra")
+	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "listaOrdenCompra")
 	private List<OrdenTrabajo> listaOrdenTrabajo;	
 	
 	public OrdenCompra() {
@@ -70,6 +69,15 @@ public class OrdenCompra implements Serializable {
 		this.listaOrdenTrabajo = listaOrdenTrabajo;
 	}
 
+	@Override
+	public boolean equals(Object a){
+		return ((OrdenCompra)a).idOrdenCompra == this.idOrdenCompra;
+	}
+
+	@Override
+    	public int hashCode() {
+    		return this.idOrdenCompra;
+    	}
 	
 	
 }

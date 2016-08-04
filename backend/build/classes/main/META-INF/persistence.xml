@@ -10,5 +10,6 @@
 		<class>model.Factura</class>
 		<class>model.OrdenCompra</class>
 		<class>model.OrdenTrabajo</class>
+		<shared-cache-mode>NONE</shared-cache-mode>
 	</persistence-unit>
 </persistence>

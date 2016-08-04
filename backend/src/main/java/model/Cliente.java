@@ -5,13 +5,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="cliente")
-@NamedQuery(name="Cliente.findAll", query="SELECT a FROM Cliente a")
 public class Cliente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@Column(name="id_cliente", unique=true, nullable=false)
-	private int idCliente;
+	private Integer idCliente;
 
 	@Column(name="nombre_cliente", nullable=false, length=30)
 	private String nombreCliente;
@@ -22,11 +21,11 @@ public class Cliente implements Serializable {
 	public Cliente() {
 	}
 
-	public int getIdCliente() {
+	public Integer getIdCliente() {
 		return idCliente;
 	}
 
-	public void setIdCliente(int idCliente) {
+	public void setIdCliente(Integer idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -46,5 +45,14 @@ public class Cliente implements Serializable {
 		this.descripcion = descripcion;
 	}
 	
+	@Override
+	public boolean equals(Object a){
+		return ((Cliente)a).idCliente == this.idCliente;
+	}
+
+	@Override
+    	public int hashCode() {
+    		return this.idCliente;
+    	}
 	
 }
