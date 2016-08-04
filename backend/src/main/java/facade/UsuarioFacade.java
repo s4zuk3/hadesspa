@@ -1,8 +1,8 @@
 package facade;
 
 import java.util.List;
-
 import javax.ejb.Local;
+import javax.ws.rs.core.MultivaluedMap;
 
 import model.Usuario;
 
@@ -18,9 +18,17 @@ public interface UsuarioFacade {
 	public Usuario find(Object id);
 
 	public List<Usuario> findAll();
+	
+	public List<Usuario> findAll(MultivaluedMap<String,String> queryParams);
 
+	public Usuario encontrarMasReciente();
+	
 	public List<Usuario> findRange(int[] range);
 
 	public int count();
+	
+	public boolean usuarioExiste(Usuario entity);
+	
+	public Usuario login(int idUsuario, String contrasena);
 
 }
