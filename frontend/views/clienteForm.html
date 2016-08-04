@@ -1,0 +1,28 @@
+<form name="clienteForm" novalidate>
+    
+    <div class="form-group">
+      <label>ID Cliente</label>
+      <input type="number" name="idCliente" class="form-control" 
+        ng-model="newCliente.idCliente">
+    </div>
+    
+    <div class="form-group">
+      <label>Nombre Cliente</label>
+      <input type="text" name="nombreCliente" class="form-control" 
+        ng-model="newCliente.nombreCliente">
+    </div>
+    
+    <div class="form-group">
+      <label>Descripción Cliente</label>
+      <input type="text" name="descripcion" class="form-control" 
+        ng-model="newCliente.descripcion">
+    </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="submit(newCliente)">Submit</button>
+    </div>
+    
+  </form>
+
+JSON GENERADO:
+  <pre>{{ newCliente | json }}</pre>

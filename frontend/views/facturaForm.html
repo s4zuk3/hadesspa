@@ -1,6 +1,51 @@
-{ID Factura = ingresar ID factura <br>
-ID OT = ???????????<br>
-fecha_emision = ingresar fecha emision (DATE)<br>
-estado = (ingresar estado, desplegar distintos estados con un select)<br>
-monto = (monto total!)<br>
-cliente = Ingresar cliente, seleccionar el cliente ingresado anteriormente. <br>
+<form name="facturaForm" novalidate>
+    
+    <div class="form-group">
+      <label>ID Factura</label>
+      <input type="number" name="idFactura" class="form-control" 
+        ng-model="newFactura.idFactura">
+    </div>
+    
+    <div class="form-group">
+      <label>ID OT</label>
+      <input type="number" name="idOrdenTrabajo" class="form-control" 
+        ng-model="newFactura.idOrdenTrabajo.idOrdenTrabajo">
+    </div>
+    
+
+    <div class="form-group">
+      <label>Fecha emision</label>
+      <input type="text" name="fecha" class="form-control" 
+        ng-model="newFactura.fecha">
+    </div>
+
+    <div class="form-group">
+      <label>Estado</label>
+      <select name="estado" ng-model="newFactura.estado" convert-to-number>
+      	<option value={{$index}} ng-repeat="estado in estados">{{estado}}</option>
+       </select>
+      </div>
+
+
+
+    <div class="form-group">
+      <label>Monto</label>
+      <input type="number" name="monto" class="form-control" 
+        ng-model="newFactura.monto">
+    </div>
+
+    <div class="form-group">
+      <label>Cliente ID</label>
+      <select name="idCliente" ng-model="newFactura.idCliente.idCliente" convert-to-number>
+      	<option value={{cliente.idCliente}} ng-repeat="cliente in clientes">{{cliente.nombreCliente}}</option>
+       </select>
+      </div>
+
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="submit(newFactura)">Submit</button>
+    </div>
+    
+  </form>
+
+JSON GENERADO:
+  <pre>{{ newFactura | json }}</pre>
