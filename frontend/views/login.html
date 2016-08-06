@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="col-sm-8 col-sm-offset-2">
+			<div class="well">
+				<h3>Login</h3>
+				<form>
+					<div class="form-group">
+						<input type="number" class="form-control" placeholder="username"
+						ng-model="loginForm.idUsuario">
+					</div>
+					<div class="form-group">
+						<input type="password" class="form-control" placeholder="password"
+						ng-model="loginForm.contrasena">
+					</div>
+					<button class="btn btn-primary" ng-click="login()">Iniciar Sesión</button><br>
+				</form>
+			</div>
+	</div>
+</div>
+
+
+JSON GENERADO:
+  <pre>{{ loginForm | json }}</pre>

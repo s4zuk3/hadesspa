@@ -1,4 +1,5 @@
-hadesApp.config(['$routeProvider', function($routeProvider) {
+hadesApp.config(['$routeProvider','$authProvider', function($routeProvider,$authProvider) {
+	$authProvider.loginUrl = URL_API + '/auth/login';
 	$routeProvider
 	.when('/', {
 		templateUrl: 'views/home.html',
@@ -9,6 +10,9 @@ hadesApp.config(['$routeProvider', function($routeProvider) {
 	.when('/clienteform', {
 		templateUrl: 'views/clienteForm.html',
 		controller: 'ClienteFormController'})
+	.when('/login', {
+		templateUrl: 'views/login.html',
+		controller: 'LoginController'})
 	.otherwise({
 		redirectTo: '/'
 	});
