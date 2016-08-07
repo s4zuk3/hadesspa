@@ -51,24 +51,7 @@ public class FacturaService {
 	@GET
 	@Path("{idFactura: [0-9]+}")
 	@Produces({"application/xml", "application/json"})
-	public Response find(
-			@Context HttpHeaders requestContext,
-			@PathParam("idFactura") Integer idFactura) throws InvalidKeyException, NoSuchAlgorithmException, IllegalStateException, SignatureException, IOException{
-		
-		
-		String authorizationHeader = 
-	            requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
-		if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
-			return Response.status(Status.FORBIDDEN).entity(MensajeRespuesta.crear("No header-bearer encontrado.")).build();		
-			}
-		String jwt = authorizationHeader.substring("Bearer".length()).trim();
-		final String secret = "mypassword";
-		try {
-		    final JWTVerifier verifier = new JWTVerifier(secret);
-		    final Map<String,Object> claims= verifier.verify(jwt);
-		} catch (JWTVerifyException e) {
-			return Response.status(Status.UNAUTHORIZED).entity(MensajeRespuesta.crear("Token Inválido.")).build();		
-		}		
+	public Response find(@PathParam("idFactura") Integer idFactura){
 		Factura a = facturaFacadeEJB.find(idFactura);
 		if(a == null){
 			return Response.status(Status.FORBIDDEN).entity(MensajeRespuesta.crear("Factura ID = "+idFactura+" no encontrada.")).build();		
