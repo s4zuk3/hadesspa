@@ -23,6 +23,7 @@ import util.MensajeRespuesta;
 
 
 @Path("/clientes")
+@TokenAuthenticated
 public class ClienteService {
 	
 	@EJB 

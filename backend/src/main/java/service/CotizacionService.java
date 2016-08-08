@@ -23,6 +23,7 @@ import util.MensajeRespuesta;
 
 
 @Path("/cotizacions")
+@TokenAuthenticated
 public class CotizacionService {
 	
 	@EJB 

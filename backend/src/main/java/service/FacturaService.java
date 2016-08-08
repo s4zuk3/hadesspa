@@ -1,18 +1,12 @@
 package service;
 
-import java.io.IOException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.SignatureException;
 import java.util.List;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import javax.ejb.EJB;
 import javax.ws.rs.Consumes;
 //import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
-import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
@@ -22,24 +16,21 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import util.MensajeRespuesta;
 import javax.ws.rs.core.UriInfo;
-
-import com.auth0.jwt.JWTVerifier;
-import com.auth0.jwt.JWTVerifyException;
-
 import javax.ws.rs.core.Context;
-import javax.ws.rs.core.HttpHeaders;
 
 import facade.FacturaFacade;
 import model.Factura;
 
 
 @Path("/facturas")
+@TokenAuthenticated
 public class FacturaService {
 	
 	@EJB 
 	FacturaFacade facturaFacadeEJB;
 
 	Logger logger = Logger.getLogger(FacturaService.class.getName());
+	
 	
 	@GET
 	@Produces({"application/xml", "application/json"})

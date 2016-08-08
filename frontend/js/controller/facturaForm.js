@@ -25,6 +25,7 @@ hadesApp.controller('FacturaFormController',function($scope,$location,Facturas_s
 			}
 			else
 			{
+				$scope.newFactura = JSON.stringify(response);
 				alert("Algun error raro sucedió. Status code "+response.status);
 			}
 

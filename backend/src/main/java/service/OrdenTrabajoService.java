@@ -23,6 +23,7 @@ import util.MensajeRespuesta;
 
 
 @Path("/ordentrabajos")
+@TokenAuthenticated
 public class OrdenTrabajoService {
 	
 	@EJB 
