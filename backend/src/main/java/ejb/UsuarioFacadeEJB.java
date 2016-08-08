@@ -46,7 +46,7 @@ public class UsuarioFacadeEJB extends AbstractFacade<Usuario> implements Usuario
 
 	}
 	
-	//TEST
+	
 	public Usuario login(int idUsuario, String contrasena){		
 		
 		CriteriaBuilder cb = getEntityManager().getCriteriaBuilder();

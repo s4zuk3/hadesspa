@@ -23,12 +23,14 @@ import model.Factura;
 
 
 @Path("/facturas")
+@TokenAuthenticated
 public class FacturaService {
 	
 	@EJB 
 	FacturaFacade facturaFacadeEJB;
 
 	Logger logger = Logger.getLogger(FacturaService.class.getName());
+	
 	
 	@GET
 	@Produces({"application/xml", "application/json"})
@@ -40,7 +42,7 @@ public class FacturaService {
 	@GET
 	@Path("{idFactura: [0-9]+}")
 	@Produces({"application/xml", "application/json"})
-	public Response find(@PathParam("idFactura") Integer idFactura){				
+	public Response find(@PathParam("idFactura") Integer idFactura){
 		Factura a = facturaFacadeEJB.find(idFactura);
 		if(a == null){
 			return Response.status(Status.FORBIDDEN).entity(MensajeRespuesta.crear("Factura ID = "+idFactura+" no encontrada.")).build();		
