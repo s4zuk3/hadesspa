@@ -1,0 +1,29 @@
+<form name="ordenTrabajoForm">
+    
+    <div class="form-group">
+      <label>ID OT</label>
+      <input type="number" name="idOrdenTrabajo" class="form-control" 
+        ng-model="newOT.idOrdenTrabajo">
+    </div>
+    
+	<div class="form-group">
+      <label>ID Cotizacion</label>
+      <input type="number" name="idCotizacion" class="form-control" 
+        ng-model="newOT.idCotizacion.idCotizacion">
+    </div>
+	
+	<div class="form-group">
+      <label>Fecha Creacion OT</label>
+      <input type="date" name="fechaCreacion" class="form-control" 
+        ng-model="newOT.fecha">
+    </div>
+	
+    <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="submit(newOT)">Submit</button>
+    </div>
+    
+  </form>
+
+
+JSON GENERADO:
+  <pre>{{ newOT | json }}</pre>
