@@ -13,6 +13,12 @@ hadesApp.config(['$routeProvider','$authProvider', function($routeProvider,$auth
 	.when('/login', {
 		templateUrl: 'views/login.html',
 		controller: 'LoginController'})
+	.when('/crearordentrabajo', {
+		templateUrl: 'views/crearOrdenTrabajo.html',
+		controller: 'CrearOrdenTrabajoController'})
+	.when('/ordenestrabajo', {
+		templateUrl: 'views/ordenesTrabajo.html',
+		controller: 'OrdenesTrabajoController'})
 	.otherwise({
 		redirectTo: '/'
 	});
