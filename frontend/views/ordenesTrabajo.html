@@ -37,15 +37,35 @@
 	<!-- <label>ID: {{ordenesTrabajo.idOrdenTrabajo}}</label> -->
 	
 		<div class="form-group" ng-show="buscarUnoBool">
-			<label>ID: {{ordenesTrabajo.idOrdenTrabajo}}</label>
+			<label>Orden de trabajo numero {{ordenesTrabajo.idOrdenTrabajo}}</label>
+			<br>
+			<label>Estado actual: {{estados[ordenesTrabajo.estado]}}</label>
+			<br>
+			<label>Fecha de creación: {{ordenesTrabajo.fecha}}</label>
+			<br>
+			<label>Cotización asociada numero {{ordenesTrabajo.idCotizacion.idCotizacion}}</label>
+			<br>
+			<label style="margin-left: 2em">Fecha de creación: {{ordenesTrabajo.idCotizacion.fecha}}</label>
+			<br>
+			<label style="margin-left: 2em">Usuario encargado: {{ordenesTrabajo.idCotizacion.id_usuario.nombreUsuario}}</label>
 		</div>
 
 		<div class="form-group" ng-repeat="OT in ordenesTrabajo" ng-show="buscarTodosBool">
-			<label>ID: {{OT.idOrdenTrabajo}}</label>
+			<label>Orden de trabajo numero {{OT.idOrdenTrabajo}}</label>
+			<br>
+			<label>Estado actual: {{estados[OT.estado]}}</label>
+			<br>
+			<label>Fecha de creación: {{OT.fecha}}</label>
+			<br>
+			<label>Cotización asociada numero {{OT.idCotizacion.idCotizacion}}</label>
+			<br>
+			<label style="margin-left: 2em">Fecha de creación: {{OT.idCotizacion.fecha}}</label>
+			<br>
+			<label style="margin-left: 2em">Usuario encargado: {{OT.idCotizacion.id_usuario.nombreUsuario}}</label>
 		</div>
 	
   </form>
 
 
 JSON GENERADO:
-  <pre>{{ ordenesTrabajo | json }}</pre>
+	<pre>{{ ordenesTrabajo | json }}</pre>
