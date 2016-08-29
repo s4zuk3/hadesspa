@@ -21,6 +21,14 @@ public class Cotizacion implements Serializable {
 
 	public Cotizacion() {
 	}
+	
+	public Cotizacion(int idCotizacion) {
+		this.idCotizacion = idCotizacion;
+	}
+	
+	public Cotizacion(Usuario user) {
+		this.id_usuario = user;
+	}
 
 	public int getIdCotizacion() {
 		return idCotizacion;
