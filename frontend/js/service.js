@@ -88,6 +88,24 @@ hadesApp.service("OT_service", function($http) {
             return response;
         });
     }
+    this.getAllOTPorIdCotizacion = function(idCotizacion) {
+      return $http.get(URL_API+"/ordentrabajos/buscarporcotizacion/"+idCotizacion).
+        then(function(response) {
+            return response;
+        }, function(response) {
+            console.log("Error get AllOTCotizacion: "+JSON.stringify(response));
+            return response;
+        });
+    }
+    this.getAllOTPorFecha = function(fecha) {
+      return $http.get(URL_API+"/ordentrabajos/buscarporfecha/"+fecha).
+        then(function(response) {
+            return response;
+        }, function(response) {
+            console.log("Error get AllOTFecha: "+JSON.stringify(response));
+            return response;
+        });
+    }
     this.getOT = function(id) {
       return $http.get(URL_API+"/ordentrabajos/"+id).
         then(function(response) {
@@ -116,6 +134,3 @@ hadesApp.service("OT_service", function($http) {
                 });
     }
 });
-
-
-

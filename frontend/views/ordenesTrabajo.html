@@ -1,41 +1,50 @@
 <form name="ordenesTrabajo">
-    
-	
+
 	<!-- buscar por id OT-->
     <div class="form-group">
       <label>ID OT</label>
-      <input type="number" name="idOrdenTrabajo" class="form-control" 
+      <input type="number" name="idOrdenTrabajo" class="form-control"
         ng-model="newOT.idOrdenTrabajo">
     </div>
-	
+
 	<div class="form-group">
       <button type="submit" class="btn btn-danger" ng-click="buscarUno(newOT.idOrdenTrabajo)">Buscar OT</button>
     </div>
-	
+
     <!-- buscar por id cotizacion -->
-	
+
 	<div class="form-group">
       <label>ID Cotizacion</label>
-      <input type="number" name="idCotizacion" class="form-control" 
+      <input type="number" name="idCotizacion" class="form-control"
         ng-model="newOT.idCotizacion.idCotizacion">
     </div>
-	
+
+  <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="buscarTodosPorCotizacion(newOT.idCotizacion.idCotizacion)">Buscar todos por cotizacion</button>
+    </div>
+
 	<!-- buscar por fecha -->
-	
+
 	<div class="form-group">
       <label>Fecha Creacion OT</label>
-      <input type="date" name="fechaCreacion" class="form-control" 
+      <input type="date" name="fechaCreacion" class="form-control"
         ng-model="newOT.fecha">
     </div>
-	
+
+  <label>{{newOT.fecha}}</label>
+
+  <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="buscarTodosPorFecha(newOT.fecha)">Buscar todos por fecha</button>
+    </div>
+
+
 	<!-- buscar todos -->
-	
-    <div class="form-group">
+
+  <div class="form-group">
       <button type="submit" class="btn btn-danger" ng-click="buscarTodos()">Buscar Todos</button>
     </div>
-	
-	<!-- <label>ID: {{ordenesTrabajo.idOrdenTrabajo}}</label> -->
-	
+
+
 		<div class="form-group" ng-show="buscarUnoBool">
 			<label>Orden de trabajo numero {{ordenesTrabajo.idOrdenTrabajo}}</label>
 			<br>
@@ -63,7 +72,7 @@
 			<br>
 			<label style="margin-left: 2em">Usuario encargado: {{OT.idCotizacion.id_usuario.nombreUsuario}}</label>
 		</div>
-	
+
   </form>
 
 
