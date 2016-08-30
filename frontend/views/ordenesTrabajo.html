@@ -1,51 +1,80 @@
 <form name="ordenesTrabajo">
-    
-	
+
 	<!-- buscar por id OT-->
     <div class="form-group">
       <label>ID OT</label>
-      <input type="number" name="idOrdenTrabajo" class="form-control" 
+      <input type="number" name="idOrdenTrabajo" class="form-control"
         ng-model="newOT.idOrdenTrabajo">
     </div>
-	
+
 	<div class="form-group">
       <button type="submit" class="btn btn-danger" ng-click="buscarUno(newOT.idOrdenTrabajo)">Buscar OT</button>
     </div>
-	
+
     <!-- buscar por id cotizacion -->
-	
+
 	<div class="form-group">
       <label>ID Cotizacion</label>
-      <input type="number" name="idCotizacion" class="form-control" 
+      <input type="number" name="idCotizacion" class="form-control"
         ng-model="newOT.idCotizacion.idCotizacion">
     </div>
-	
+
+  <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="buscarTodosPorCotizacion(newOT.idCotizacion.idCotizacion)">Buscar todos por cotizacion</button>
+    </div>
+
 	<!-- buscar por fecha -->
-	
+
 	<div class="form-group">
       <label>Fecha Creacion OT</label>
-      <input type="date" name="fechaCreacion" class="form-control" 
+      <input type="date" name="fechaCreacion" class="form-control"
         ng-model="newOT.fecha">
     </div>
-	
+
+  <label>{{newOT.fecha}}</label>
+
+  <div class="form-group">
+      <button type="submit" class="btn btn-danger" ng-click="buscarTodosPorFecha(newOT.fecha)">Buscar todos por fecha</button>
+    </div>
+
+
 	<!-- buscar todos -->
-	
-    <div class="form-group">
+
+  <div class="form-group">
       <button type="submit" class="btn btn-danger" ng-click="buscarTodos()">Buscar Todos</button>
     </div>
-	
-	<!-- <label>ID: {{ordenesTrabajo.idOrdenTrabajo}}</label> -->
-	
+
+
 		<div class="form-group" ng-show="buscarUnoBool">
-			<label>ID: {{ordenesTrabajo.idOrdenTrabajo}}</label>
+			<label>Orden de trabajo numero {{ordenesTrabajo.idOrdenTrabajo}}</label>
+			<br>
+			<label>Estado actual: {{estados[ordenesTrabajo.estado]}}</label>
+			<br>
+			<label>Fecha de creación: {{ordenesTrabajo.fecha}}</label>
+			<br>
+			<label>Cotización asociada numero {{ordenesTrabajo.idCotizacion.idCotizacion}}</label>
+			<br>
+			<label style="margin-left: 2em">Fecha de creación: {{ordenesTrabajo.idCotizacion.fecha}}</label>
+			<br>
+			<label style="margin-left: 2em">Usuario encargado: {{ordenesTrabajo.idCotizacion.id_usuario.nombreUsuario}}</label>
 		</div>
 
 		<div class="form-group" ng-repeat="OT in ordenesTrabajo" ng-show="buscarTodosBool">
-			<label>ID: {{OT.idOrdenTrabajo}}</label>
+			<label>Orden de trabajo numero {{OT.idOrdenTrabajo}}</label>
+			<br>
+			<label>Estado actual: {{estados[OT.estado]}}</label>
+			<br>
+			<label>Fecha de creación: {{OT.fecha}}</label>
+			<br>
+			<label>Cotización asociada numero {{OT.idCotizacion.idCotizacion}}</label>
+			<br>
+			<label style="margin-left: 2em">Fecha de creación: {{OT.idCotizacion.fecha}}</label>
+			<br>
+			<label style="margin-left: 2em">Usuario encargado: {{OT.idCotizacion.id_usuario.nombreUsuario}}</label>
 		</div>
-	
+
   </form>
 
 
 JSON GENERADO:
-  <pre>{{ ordenesTrabajo | json }}</pre>
+	<pre>{{ ordenesTrabajo | json }}</pre>

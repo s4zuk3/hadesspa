@@ -19,7 +19,7 @@ public class OrdenTrabajo implements Serializable {
 
 	@Column(name="fecha_creacion_ot", nullable=false)
 	private Date fecha;
-	
+
 	@Column(name="estado_ot", nullable=false)
 	private int estado;
 
@@ -27,7 +27,7 @@ public class OrdenTrabajo implements Serializable {
 	@JoinTable(name = "oc_ot", joinColumns = { @JoinColumn(name = "id_oc") }, inverseJoinColumns = {
 			@JoinColumn(name = "id_ot") })
 	private List<OrdenCompra> listaOrdenCompra;
-	
+
 	public OrdenTrabajo() {
 	}
 
@@ -80,5 +80,5 @@ public class OrdenTrabajo implements Serializable {
     	public int hashCode() {
     		return this.idOrdenTrabajo;
     	}
-	
+
 }

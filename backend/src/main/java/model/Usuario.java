@@ -26,6 +26,10 @@ public class Usuario implements Serializable {
 	
 	public Usuario() {
 	}
+	
+	public Usuario(int idUsuario) {
+		this.idUsuario = idUsuario;
+	}
 
 	public int getIdUsuario() {
 		return idUsuario;
